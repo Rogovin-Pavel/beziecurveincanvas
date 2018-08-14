@@ -5,8 +5,17 @@
 }
 
 body {
-  position: relative;
+  display: flex;
+  justify-content: center;
 }
+
+.main-content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+}
+
 
 .control-point {
   cursor: pointer;
@@ -15,4 +24,5 @@ body {
   border-radius: 50%;
   width: 10px;
   height: 10px;
+  z-index: 1000;
 }
