@@ -121,22 +121,19 @@ function draw(move){
   var canvas = document.getElementById('bezier-curve');
   if (canvas.getContext){
     var ctx = canvas.getContext('2d');
+    var drawBezie = () => {
+      ctx.beginPath();
+      ctx.moveTo(START_COORDS.x, START_COORDS.y);
+      ctx.bezierCurveTo(BEZIER_COORDS.cp1x, BEZIER_COORDS.cp1y, 
+                            BEZIER_COORDS.cp2x, BEZIER_COORDS.cp2y, 
+                            BEZIER_COORDS.x, BEZIER_COORDS.y)
+      ctx.stroke();
+    }
     if (move) {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.beginPath();
-      ctx.moveTo(START_COORDS.x, START_COORDS.y);
-      ctx.bezierCurveTo(BEZIER_COORDS.cp1x, BEZIER_COORDS.cp1y, 
-                        BEZIER_COORDS.cp2x, BEZIER_COORDS.cp2y, 
-                        BEZIER_COORDS.x, BEZIER_COORDS.y)
-      ctx.stroke();
+      drawBezie();
     } else {
-      console.log(ctx);
-      ctx.beginPath();
-      ctx.moveTo(START_COORDS.x, START_COORDS.y);
-      ctx.bezierCurveTo(BEZIER_COORDS.cp1x, BEZIER_COORDS.cp1y, 
-                        BEZIER_COORDS.cp2x, BEZIER_COORDS.cp2y, 
-                        BEZIER_COORDS.x, BEZIER_COORDS.y)
-      ctx.stroke();
+      drawBezie();
     }
   }
 }
