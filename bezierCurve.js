@@ -1,10 +1,10 @@
 const BEZIER_COORDS = {
-  cp1x: 20,
-  cp1y: 150,
-  cp2x: 200,
-  cp2y: 150,
-  x: 200,
-  y: 50
+  cp1x: 90,
+  cp1y: 90,
+  cp2x: 165,
+  cp2y: 165,
+  x: 205,
+  y: 205
 }
 
 const START_COORDS = {
