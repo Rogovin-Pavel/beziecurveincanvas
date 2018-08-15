@@ -1,9 +1,9 @@
-var CP1_COORDS = {
+const CP1_COORDS = {
 	x: 90,
 	y: 90
 };
 
-var CP2_COORDS = {
+const CP2_COORDS = {
 	x: 165,
 	y: 165
 };
@@ -28,6 +28,7 @@ controlPoint2.style.top = CP2_COORDS.y - 5 + 'px';
 
 var drawPanel = document.getElementById('draw-panel');
 
+//Drag and drop функция контроля кривой Безье
 var moveControlPoint = (evt, cp1, CP_COORDS) => {
   var id = evt.target.id;
   console.log(cp1);
@@ -36,8 +37,8 @@ var moveControlPoint = (evt, cp1, CP_COORDS) => {
   var cp = cp1;
   
   var startCoords = {
-		x: evt.clientX,
-		y: evt.clientY
+    x: evt.clientX,
+    y: evt.clientY
   }
   
   
@@ -85,8 +86,8 @@ controlPoint2.addEventListener('mousedown', function(evt) {
 	moveControlPoint(evt, controlPoint2, CP2_COORDS);
 });
 
-
-function draw(move, startCoords){
+//Функция рендера кривой Безье
+function draw(move){
   var canvas = document.getElementById('bezier-curve');
   if (canvas.getContext){
     var ctx = canvas.getContext('2d');
