@@ -30,10 +30,10 @@ var drawPanel = document.getElementById('draw-panel');
 
 //Drag and drop функция контроля кривой Безье
 var moveControlPoint = (evt, cp1, CP_COORDS) => {
-  var id = evt.target.id;
-  console.log(cp1);
-  console.log(id);
+	
   evt.preventDefault();
+	
+  var id = evt.target.id;
   var cp = cp1;
   
   var startCoords = {
@@ -43,7 +43,9 @@ var moveControlPoint = (evt, cp1, CP_COORDS) => {
   
   
   var onMouseMove = function (moveEvt) {
+	  
     moveEvt.preventDefault();
+	  
     var shift = {
       x: startCoords.x - moveEvt.clientX,
       y: startCoords.y - moveEvt.clientY
@@ -68,7 +70,9 @@ var moveControlPoint = (evt, cp1, CP_COORDS) => {
   
 
   var onMouseUp = function (upEvt) {
+	  
     upEvt.preventDefault();
+	  
     document.removeEventListener('mousemove', onMouseMove);
     document.removeEventListener('mouseup', onMouseUp);
   };
@@ -78,7 +82,6 @@ var moveControlPoint = (evt, cp1, CP_COORDS) => {
 }
 
 controlPoint.addEventListener('mousedown', function(evt) {
-	console.log(controlPoint);
 	moveControlPoint(evt, controlPoint, CP1_COORDS);
 });
 
